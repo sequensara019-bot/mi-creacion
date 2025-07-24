@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sara Mishel - Sitio Personal</title>
+  <link rel="stylesheet" href="estilo.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Sara Mishel Sequen Ortega</h1>
+    <p> 💐🏎️</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>🌸 Mis gustos 🌸</h2>
+      <div class="gustos">
+        <div>
+          <img src="imgenes/lugar1.jpg" alt="Paisaje"/>
+        </div>
+        <div>
+          <img src="imgenes/lugar2.jpg" alt="Flores"/>
+        </div>
+        <div>
+          <img src="imgenes/lugar3.jpg" alt="Libros"/>
+        </div>
+      </div>
+    </section>
+
+
+ <section>
+      <h2>🌸 Mis Pitos favorito 🌸</h2>
+      <div class="gustos">
+        <div>
+          <img src="imgenes/img2carlos.jpg" alt="Paisaje"/>
+        </div>
+        <div>
+          <img src="imgenes/img3lecler.jpg" alt="Flores"/>
+        </div>
+      </div>
+    </section>
+
+
+    <section>
+      <h2>🎥 Mi video favorito de Charles Leclerc</h2>
+   <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/RX4Bc_WqAPw?si=hPHQ9tLsCxHvP8Va" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </section>
+
+    <section class="juego">
+      <h2>🎮 Juego 1: Fórmula 1 (aleatorio)</h2>
+      <p>Haz clic y descubre si ganas la carrera</p>
+      <button id="jugar">Jugar</button>
+      <p id="resultado"></p>
+    </section>
+
+    <section id="juego-f1">
+      <h2>🏁 Juego 2: Fórmula 1 interactivo</h2>
+      <p>Controla el coche con flechas o botones (en móvil)</p>
+      <canvas id="gameCanvas" width="600" height="400"></canvas>
+      <div id="score">Puntaje: 0</div>
+      <div id="touchControls">
+        <button id="leftBtn">⬅️</button>
+        <button id="rightBtn">➡️</button>
+      </div>
+      <div id="gameOver" class="hidden">
+        <h3>Juego Terminado</h3>
+        <button id="restartBtn">Reiniciar Juego</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>🌷 Sitio creado por Sara Mishel · Inspirado en la belleza natural y la velocidad 🌷</p>
+  </footer>
+
+  <script src="juego.js"></script>
+  <script>
+    const btn = document.getElementById("jugar");
+    const resultado = document.getElementById("resultado");
+
+    btn.addEventListener("click", () => {
+      const resultadoCarrera = Math.random();
+      if (resultadoCarrera < 0.33) {
+        resultado.textContent = "¡Ganaste el Gran Premio! 🏆";
+      } else if (resultadoCarrera < 0.66) {
+        resultado.textContent = "Quedaste en segundo lugar. ¡Buen intento! 🥈";
+      } else {
+        resultado.textContent = "Tu auto se averió. ¡Inténtalo de nuevo! 🔧";
+      }
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+
